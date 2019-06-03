@@ -4,5 +4,5 @@
 
 # Example that prints the loopback address and gateway for each host
 - debug:
-    msg: System {{ inventory_hostname }} is RHEL 
-  when:  huit_os_family == 'rhel'
+    msg: System {{ inventory_hostname }} is {{ huit_os_family }} 
+    #  when:  huit_os_family == 'rhel'
