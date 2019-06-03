@@ -37,4 +37,4 @@
         name: '{{ item }}' 
       loop: '{{ role_name }}'
       loop_control: 
-        huit_os_family: '{{ huit_os_family }}'
+        loop_var: '{{ huit_os_family }}'
