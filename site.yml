@@ -34,6 +34,6 @@
 
     - name: install selected roles
       include_role:
-        name: '{{ item }} {{ huit_os_family }}'
+        name: '{{ item }}' '{{ huit_os_family }}'
       loop: '{{ role_name }}'
 
