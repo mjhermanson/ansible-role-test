@@ -5,7 +5,7 @@
   become: yes
   become_method: sudo
 
-  pre_tasks:
+  tasks:
 
     - name: gather facts
       setup:
@@ -30,11 +30,9 @@
         huit_os_version: "{{ ansible_facts['distribution_version'] }}"
       when: ansible_facts['os_family'] == 'Ubuntu' or ansible_facts['os_family'] == 'Debian'
 
-  tasks:
-
     - name: install selected roles
       include_role:
         name: '{{ item }}' 
       loop: '{{ role_name }}'
-      loop_control: 
-        loop_var: '{{ huit_os_family }}'
+#      loop_control: 
+#        loop_var: '{{ huit_os_family }}'
