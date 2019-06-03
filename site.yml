@@ -16,20 +16,20 @@
       debug:
         var: ansible_facts
 
-#    - name: set rhel family
-#      set_fact:
-#        huit_os_family: 'rhel'
-#        huit_os_major_version: "{{ ansible_facts['distribution_major_version'] }}"
-#        huit_os_version: "{{ ansible_facts['distribution_version'] }}"
-#      when: ansible_facts['os_family'] == 'RedHat' or ansible_facts['os_family'] == 'CentOS'
-#
-#    - name: set debian family
-#      set_fact:
-#        huit_os_family: 'deb'
-#        huit_os_major_version: "{{ ansible_facts['distribution_major_version'] }}"
-#        huit_os_version: "{{ ansible_facts['distribution_version'] }}"
-#      when: ansible_facts['os_family'] == 'Ubuntu' or ansible_facts['os_family'] == 'Debian'
-#
+    - name: set rhel family
+      set_fact:
+        huit_os_family: 'rhel'
+        huit_os_major_version: "{{ ansible_facts['distribution_major_version'] }}"
+        huit_os_version: "{{ ansible_facts['distribution_version'] }}"
+      when: ansible_facts['os_family'] == 'RedHat' or ansible_facts['os_family'] == 'CentOS'
+
+    - name: set debian family
+      set_fact:
+        huit_os_family: 'deb'
+        huit_os_major_version: "{{ ansible_facts['distribution_major_version'] }}"
+        huit_os_version: "{{ ansible_facts['distribution_version'] }}"
+      when: ansible_facts['os_family'] == 'Ubuntu' or ansible_facts['os_family'] == 'Debian'
+
 
     - name: install selected roles
       include_role:
